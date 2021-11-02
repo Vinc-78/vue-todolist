@@ -32,25 +32,29 @@
 
         <div class="col-6">
 
-          <h1 class="text-center py-5">Hello Vueoolean - Todolist</h1>
+          <h1 class="text-center py-5">{{titolo}}</h1>
 
 
           <div class="my-3 mb-5">
             <div class="input-group">
 
-              <input class="form-control" placeholder="Cosa vuoi fare...">
+              <input class="form-control" placeholder="Cosa vuoi fare..."
+              v-model="nuovoElemento">
 
-              <button class="btn btn-outline-primary" type="button" id="addBtn">Inserisci</button>
+              <button class="btn btn-outline-primary" type="button" id="addBtn"
+              v-on:click="aggiungiElemento">Inserisci</button>
 
             </div>
           </div>
 
           <div class="list-group">
 
-            <div class="list-group-item d-flex align-item-center py-3  ">
-
+            <div class="list-group-item d-flex align-item-center py-3  "
+            v-for="elementi in coseDaFare">
               
-              <label class="flex-fill">Cose da fare</label>
+              <div class="list-group-item-border"></div>
+              
+              <label class="flex-fill">{{elementi}}</label>
 
               <button type="button" class="btn-close" aria-label="Close"></button>
 

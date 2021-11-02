@@ -39,7 +39,7 @@
             <div class="input-group">
 
               <input class="form-control" placeholder="Cosa vuoi fare..."
-              v-model="nuovoElemento">
+              v-model="nuovoElemento" v-on:keyup.enter="aggiungiElemento">
 
               <button class="btn btn-outline-primary" type="button" id="addBtn"
               v-on:click="aggiungiElemento">Inserisci</button>
@@ -50,13 +50,14 @@
           <div class="list-group">
 
             <div class="list-group-item d-flex align-item-center py-3  "
-            v-for="elementi in coseDaFare">
+            v-for="(elementi, indice) in coseDaFare">
               
               <div class="list-group-item-border"></div>
               
-              <label class="flex-fill">{{elementi}}</label>
+              <label class="flex-fill">{{indice+1}} - {{elementi}}</label>
 
-              <button type="button" class="btn-close" aria-label="Close"></button>
+              <button type="button" class="btn-close" aria-label="Close"
+              v-on:click="cancella(indice)"></button>
 
             </div>
           </div>

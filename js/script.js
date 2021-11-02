@@ -4,7 +4,7 @@ new Vue({
   el: "#root",
   data: {
     titolo:"Hello Vueoolean - Todolist",
-    coseDaFare:["prova","prova2"],
+    coseDaFare:[],
     nuovoElemento:"",
     
   },
@@ -27,6 +27,10 @@ new Vue({
 
       this.nuovoElemento ="";
 
+
+    },
+    cancella(indiceDaTogliere){
+      this.coseDaFare.splice(indiceDaTogliere,1); 
 
     }
 

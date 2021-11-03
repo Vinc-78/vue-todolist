@@ -38,6 +38,8 @@
           <div class="my-3 mb-5">
             <div class="input-group">
 
+              <input type="color" v-model="colorType">
+
               <input class="form-control" placeholder="Cosa vuoi fare..."
               v-model="nuovoElemento" v-on:keyup.enter="aggiungiElemento">
 
@@ -52,9 +54,9 @@
             <div class="list-group-item d-flex align-item-center py-3  "
             v-for="(elementi, indice) in coseDaFare">
               
-              <div class="bordo"></div>
+              <div class="bordo" v-bind:style="'background-color:' + elementi.col"></div>
               
-              <label class="flex-fill">{{indice+1}} - {{elementi}}</label>
+              <label class="flex-fill">{{indice+1}} - {{elementi.text}}</label>
 
               <button type="button" class="btn-close" aria-label="Close"
               v-on:click="cancella(indice)"></button>
